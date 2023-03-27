@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/styles/style.css}" rel="stylesheet" />
+
+</head>
+<body>
+
+<div >
+    <div th:each="user: ${users}" class="card">
+        <h2>User Info</h2>
+        <p th:text="'Personal code: ' + ${user.personalCode}"></p>
+        <p th:text="'First Name: ' + ${user.firstName}"></p>
+        <p th:text="'Last Name: ' + ${user.lastName}"></p>
+
+        <p th:if="${user.hasDebt}" th:text="'Segmentation: Has Debt'"></p>
+        <p th:if="${!user.hasDebt}" th:text="'Segmentation: ' + ${user.segment}"></p>
+
+        <button class="button" th:value="${user.segment}" th:onclick="'window.location.href = \'' + @{/loans/calculateLoan/{userId}(userId=${user.personalCode})} + '\''">Add Loan</button>
+    </div>
+</div>
+
+<script type="text/javascript" th:src="@{/js/userCards.js}"></script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Add Loan Form</title>
+    <link th:href="@{/styles/style.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div class="err-box" th:if="${errors != null}">
+    <h3 th:each="error : ${errors}" th:text="${error}"></h3>
+</div>
+
+<div class="loan-form">
+    <form method="post">
+        <h1 th:text="'Welcome, ' + ${user.firstName} + ' ' + ${user.lastName} + '!'"></h1>
+        <h1>Please, insert loan data</h1>
+
+        <label for="loan-amount">Loan Amount (€):</label>
+        <input type="number" id="loan-amount" name="loanAmount" required>
+        <div id="loan-amount-error" class="error"></div>
+
+        <label for="loan-period">Loan Period (in months):</label>
+        <input type="number" id="loan-period" name="loanPeriod" required>
+        <div id="loan-period-error" class="error"></div>
+
+        <button id="calculate-btn" type="submit">Calculate best loan</button>
+    </form>
+    <button class="go-back-btn" th:onclick="'window.location.href = \'' + @{/users/} + '\''">Go back</button>
+
+</div>
+
+
+
+<div th:if="${newLoan != null}" class="loan-container">
+    <h1 th:if="${loanIsApproved}">Your loan is approved</h1>
+    <h1 th:if="${!loanIsApproved}">Your loan is declined</h1>
+    <h2>Best suggestion for loan</h2>
+    <h3 th:text="'Maximum loan amount: ' + ${newLoan.loanAmount} + '€'"></h3>
+    <h3 th:text="'Loan period : ' + ${newLoan.loanPeriod} + ' months'"></h3>
+</div>
+
+</body>
+</html>

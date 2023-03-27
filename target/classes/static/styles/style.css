@@ -1,0 +1,95 @@
+* {
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+    margin: 10px auto;
+    width: 400px;
+}
+
+.card {
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    display: inline-block;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.card p {
+    margin-bottom: 5px;
+}
+
+.button {
+    background-color: green;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border: 2px solid black;
+
+}
+
+.button:hover {
+    background-color: darkgreen;
+}
+
+
+.loan-form, .loan-container, .err-box {
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    width: 400px;
+    margin: 10px auto;
+}
+
+.loan-container {
+    margin-top: 30px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="number"] {
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button, .go-back-btn {
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.go-back-btn {
+    background-color: blue;
+}
+
+.go-back-btn:hover {
+    background-color: deepskyblue;
+}
+
+form button:hover {
+    background-color: darkgreen;
+}
+
+.error {
+    color: red;
+    margin-top: 5px;
+}
